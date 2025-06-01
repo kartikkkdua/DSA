@@ -1,0 +1,1 @@
+#Functions are the block of code that can be called multiple times
