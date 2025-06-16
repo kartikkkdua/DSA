@@ -1,0 +1,4 @@
+Types of backtracking
+->Decision
+->Optimization
+->Enumeration
