@@ -18,7 +18,7 @@ This repository is a personal log of my progress as I dive deep into DSA concept
 ---
 ## 🧠 Topics Covered (Checklist)
 
-- [ ] Arrays
+- [DONE] Arrays
 - [ ] Strings
 - [ ] Recursion
 - [ ] Linked Lists
