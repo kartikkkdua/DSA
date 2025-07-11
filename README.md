@@ -6,7 +6,7 @@ This repository is a personal log of my progress as I dive deep into DSA concept
 ---
 
 ## 📅 Start Date
-**June 1, 2025**
+**July 1, 2025**
 
 ## 🎯 Goals
 
@@ -41,20 +41,13 @@ This repository is a personal log of my progress as I dive deep into DSA concept
 - [HackerRank](https://www.hackerrank.com/)
 - [InterviewBit](https://www.interviewbit.com/)
 
----
-
-## 📈 Progress Log
-
-| Date       | Topic         | Notes / Problems Solved |
-|------------|---------------|--------------------------|
-| 2025-06-01 | Arrays        | Started with basics like reversing an array, finding max/min. |
-| YYYY-MM-DD | Topic Name    | Summary of what was learned or practiced. |
+ |
 
 ---
 
 ## 🛠️ Language & Tools
 
-- **Java 22+**
+- **Java 23+**
 - **VS Code / IntelliJ IDEA**
 - **JDK**
 - **Git & GitHub**
