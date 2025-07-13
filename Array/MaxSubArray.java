@@ -2,7 +2,7 @@
 
 public class MaxSubArray{
     
-    public static void printsubarray(int numbers[]){
+    public static void maxsubarraysum(int numbers[]){
         int currentsum=0;
         int maxsum=Integer.MIN_VALUE;
         for(int i=0;i<numbers.length;i++){
@@ -25,6 +25,6 @@ public class MaxSubArray{
     }
     public static void main(String args[]){
     int numbers[]={2,4,6,8,10};
-    printsubarray(numbers);
+   maxsubarraysum(numbers);
     }
 }
