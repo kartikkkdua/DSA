@@ -192,24 +192,95 @@ public class LinkedList {
         }
         return slow; //slow is my mid node here
     }
-    
+    public boolean checkPalindrome(){
+        if(head== null || head.next==null){
+            return true;
+        }
+        //step 1 : calculate mid
+        Node midNode=findMid(head);
+
+        //step 2 : reverse second half
+        Node prev=null;
+        Node curr=midNode;
+        Node next;
+        while(curr != null){
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+        }
+        Node right = prev; //right half head 
+        Node left = head;
+        //step3 : check left & right half
+        while(right !=null){
+            if(left.data != right.data){
+                return false;
+            }
+            left=left.next;
+            right=right.next;
+        }
+        return true;
+    }  
+    public static boolean  isCycle(){
+        Node slow=head;
+        Node fast=head;
+
+        while(fast !=null && fast.next !=null ){
+            slow=slow.next; //+1
+            fast=fast.next.next; //+2
+
+            if(slow==fast){
+                return true; //cycle exists
+            }
+        }
+        return false; //cycle dose'nt exists
+    }
+    public static void removeCycle(){
+        //detect cycle
+        Node slow=head;
+        Node fast=head;
+        boolean cycle =false;
+        while(fast !=null && fast.next !=null ){
+            slow=slow.next;
+            fast=fast.next.next;
+            if(fast==slow){
+                cycle=true;
+                break;
+            }
+        }
+        if(cycle ==false){
+            return;
+        }
+        //find meeting point
+        slow=head;
+        Node prev=null; //last node
+        while(slow !=fast){
+            prev=fast;
+            slow=slow.next;
+            fast=fast.next; 
+        }
+        //remove cycle -> last.next=null
+        prev.next=null;
+    }
+ 
     public static void main(String args[]) {
         LinkedList ll = new LinkedList();
+
         // ll.head = new Node(1);
         // ll.head.next = new Node(2);
         //above is the basic to create linkedlist we can create a full linked list like this but we will create methods under linkedlist class so we can add or perform any action in a linked list
-        ll.print();
-        ll.addFirst(2);
-        ll.print();
-        ll.addFirst(1);
-        ll.print();
-        ll.addLast(4);
-        ll.print();
-        ll.addLast(5);
-        ll.print();
+        // ll.print();
+        // ll.addFirst(2);
+        // ll.print();
+        // ll.addFirst(1);
+        // ll.print();
+        // ll.addLast(4);
+        // ll.print();
+        // ll.addLast(5);
+        // ll.print();
 
-        ll.add(2,3);
-        ll.print();
+        // ll.add(2,3);
+        // ll.print();
 
         // System.out.println(ll.size);
         // ll.removeFirst();
@@ -230,8 +301,34 @@ public class LinkedList {
         // ll.reverse();
         // ll.print();
 
-        ll.print();
-        ll.deleteNthFromEnd(3);
-        ll.print();
+        // ll.print();
+        // ll.deleteNthFromEnd(3);
+        // ll.print();
+
+        
+        // ll.addLast(1);
+        // ll.addLast(2);
+        // ll.addLast(2);
+        //  ll.addLast(1);
+        // ll.print();
+        // System.out.println(ll.checkPalindrome());
+
+
+        // head=new Node(1);
+        // head.next=new Node(2);
+        // head.next.next=new Node(3);
+        // head.next.next.next=head;
+        // //cycle exixts 1->2->3->1....
+        // System.out.println(isCycle());
+
+        head=new Node(1);
+        Node temp=new Node(2);
+        head.next=temp;
+        head.next.next=new Node(3);
+        head.next.next.next=temp;
+        //cycle exixts 1->2->3->2....
+        System.out.println(isCycle()); //return true 
+        removeCycle();
+        System.out.println(isCycle()); // after removing return false
     }
 }
